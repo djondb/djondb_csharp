@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.*~
 
 # Precompiled Headers
 *.gch
@@ -26,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+[Rr]elease*/
+[Bb]in
+[Dd]ebug*/
+
+# Trash/recovery files
+*.swp
