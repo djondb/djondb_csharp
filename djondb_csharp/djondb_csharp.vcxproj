@@ -87,8 +87,9 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(Platform)</AdditionalLibraryDirectories>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRImageType>Default</CLRImageType>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -101,8 +102,9 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(Platform)</AdditionalLibraryDirectories>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRImageType>Default</CLRImageType>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,7 +117,8 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(Platform)</AdditionalLibraryDirectories>
+      <CLRImageType>Default</CLRImageType>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,7 +131,8 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(Platform)</AdditionalLibraryDirectories>
+      <CLRImageType>Default</CLRImageType>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
