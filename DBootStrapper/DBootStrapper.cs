@@ -5,6 +5,7 @@ using System.Text;
 using System.Reflection;
 using System.IO;
 using System.Configuration;
+using System.Resources;
 
 namespace Djondb
 {
@@ -26,7 +27,31 @@ namespace Djondb
                 _x64Dir = "x64";
             }
 
+            string appDir = GetAppDir();
+            File.Delete(Path.Combine(appDir, "djondb_csharp.dll"));
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(ResolverHandler);
+        }
+
+        private static string GetAppDir()
+        {
+            String appDir = null;
+            var webAssemblies = AppDomain.CurrentDomain.GetAssemblies()
+                  .Where(a => a.FullName.StartsWith("System.Web"));
+            foreach (var webAssembly in webAssemblies)
+            {
+                var httpRuntimeType = webAssembly.GetType("System.Web.HttpRuntime");
+                if (httpRuntimeType != null)
+                {
+                    PropertyInfo prop = httpRuntimeType.GetProperty("BinDirectory", BindingFlags.GetProperty | BindingFlags.Static | BindingFlags.Public);
+                    appDir = (string)prop.GetValue(null, null);
+                    break;
+                }
+            }
+            if (appDir == null)
+            {
+                appDir = System.AppDomain.CurrentDomain.BaseDirectory;
+            }
+            return appDir;
         }
 
         private static System.Reflection.Assembly ResolverHandler(
@@ -34,23 +59,7 @@ namespace Djondb
         {
             if (args.Name.StartsWith("djondb_csharp"))
             {
-                String appDir = null;
-                var webAssemblies = AppDomain.CurrentDomain.GetAssemblies()
-                      .Where(a => a.FullName.StartsWith("System.Web"));
-                foreach (var webAssembly in webAssemblies)
-                {
-                    var httpRuntimeType = webAssembly.GetType("System.Web.HttpRuntime");
-                    if (httpRuntimeType != null)
-                    {
-                        PropertyInfo prop = httpRuntimeType.GetProperty("BinDirectory", BindingFlags.GetProperty | BindingFlags.Static | BindingFlags.Public);
-                        appDir = (string)prop.GetValue(null, null);
-                    }
-                }
-                if (appDir == null) 
-                {
-                    appDir = System.AppDomain.CurrentDomain.BaseDirectory;
-                }
-                //String appDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                String appDir = GetAppDir();
 
                 // Here we detect the type of CPU architecture 
                 // at runtime and select the mixed-mode library 
@@ -73,6 +82,19 @@ namespace Djondb
             return null;
         }
 
+
+        private static byte[] readStream(Stream stream)
+        {
+            MemoryStream ms = new MemoryStream();
+            byte[] buffer = new byte[1024];
+            int readed;
+            while ((readed = stream.Read(buffer, 0, 1024)) > 0)
+            {
+                ms.Write(buffer, 0, readed);
+            }
+
+            return ms.ToArray();
+        } 
     }
 }
 
