@@ -1,9 +1,13 @@
-install (FILES Release/djondb_csharp.dll libs/Release/x86/pthreadVC2.dll
+
+install (FILES Release/Win32/djondb_csharp.dll libs/Release/Win32/msvcp100.dll libs/Release/Win32/msvcr100.dll libs/Release/Win32/pthreadVC2.dll
 	DESTINATION ./libs/x86
 	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE)
-install(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION ./libs/x86)
 
-install (FILES x64/Release/djondb_csharp.dll libs/Release/x64/pthreadVC2.dll
+install (FILES Release/x64/djondb_csharp.dll   libs/Release/x64/msvcp100.dll   libs/Release/x64/msvcr100.dll   libs/Release/x64/pthreadVC2.dll
 	DESTINATION ./libs/x64
 	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE)
-install(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION ./libs/x64)
+
+#install(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION ./bin/test)
+install (FILES Release/Win32/djondb_csharp.dll 
+	DESTINATION ./libs
+	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE)

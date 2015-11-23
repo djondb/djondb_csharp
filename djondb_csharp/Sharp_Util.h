@@ -7,5 +7,6 @@ public:
 
 	static char* ConvertToChar(System::String^ str);
 	static System::String^ ConvertToString(const char* c);
+
 };
 

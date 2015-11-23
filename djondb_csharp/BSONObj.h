@@ -7,6 +7,7 @@ typedef BSONObj I_BSONObj;
 #include "BSONArrayObj.h"
 
 namespace Djondb {
+	using namespace System::Collections::Generic;
 
 	public ref class BSONObj
 	{
@@ -53,6 +54,10 @@ namespace Djondb {
 		virtual bool operator !=(BSONObj^ obj);
 
 		I_BSONObj* ptr();
+
+		List<System::String^>^ properties();
+		const System::Object^ get(System::String^ propName);
+
 	private:
 		I_BSONObj* _internal;
 	};

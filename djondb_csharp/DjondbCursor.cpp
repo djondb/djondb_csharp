@@ -4,6 +4,7 @@
 Djondb::DjondbCursor::DjondbCursor(djondb::DjondbCursor* cursor)
 {
 	_internal = cursor;
+	_current = nullptr;
 }
 
 Djondb::DjondbCursor::~DjondbCursor(void)
@@ -12,19 +13,29 @@ Djondb::DjondbCursor::~DjondbCursor(void)
 }
 
 bool Djondb::DjondbCursor::next() {
-	return _internal->next();
+	bool res = _internal->next();
+
+	if (res) {
+		I_BSONObj* iBson = _internal->current();
+
+		_current = gcnew Djondb::BSONObj(iBson);
+	}
+	return res;
 }
 
 bool Djondb::DjondbCursor::previous() {
-	return _internal->previous();
+	bool res = _internal->previous();
+
+	if (res) {
+		I_BSONObj* iBson = _internal->current();
+
+		_current = gcnew Djondb::BSONObj(iBson);
+	}
+	return res;
 }
 
 Djondb::BSONObj^ Djondb::DjondbCursor::current() {
-	I_BSONObj* iBson = _internal->current();
-
-	Djondb::BSONObj^ res = gcnew Djondb::BSONObj(iBson);
-
-	return res;
+	return _current;
 }
 
 __int32 Djondb::DjondbCursor::length() {

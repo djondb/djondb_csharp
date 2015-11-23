@@ -17,6 +17,14 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B00DC682-6EC7-41C0-8E21-7F2D7DB2F3DB}</ProjectGuid>
@@ -43,7 +51,19 @@
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CLRSupport>true</CLRSupport>
@@ -61,21 +81,45 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,7 +130,6 @@
       <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <CLRImageType>Default</CLRImageType>
@@ -101,7 +144,6 @@
       <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <CLRImageType>Default</CLRImageType>
@@ -115,7 +157,19 @@
       <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
+      <CLRImageType>Default</CLRImageType>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
       <CLRImageType>Default</CLRImageType>
@@ -129,10 +183,25 @@
       <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
       <CLRImageType>Default</CLRImageType>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)/includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>djon-clientStatic.lib;Ws2_32.lib;antlr3c.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;djon-network.lib;djon-command.lib;djon-tx.lib;djon-db.lib;djon-filesystem.lib;djon-cache.lib;djon-bson.lib;djon-util.lib;pthreadVC2.lib;Rpcrt4.lib;v8_base.lib;v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)/libs/$(Configuration)/$(ProcessorArchitectureAsPlatform)</AdditionalLibraryDirectories>
+      <CLRImageType>Default</CLRImageType>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <Version>3.5.51122</Version>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -143,6 +212,7 @@
   <ItemGroup>
     <ClInclude Include="BSONArrayObj.h" />
     <ClInclude Include="BSONObj.h" />
+    <ClInclude Include="BsonParser.h" />
     <ClInclude Include="DjondbConnection.h" />
     <ClInclude Include="DjondbConnectionManager.h" />
     <ClInclude Include="DjondbCursor.h" />
@@ -154,6 +224,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BSONArrayObj.cpp" />
     <ClCompile Include="BSONObj.cpp" />
+    <ClCompile Include="BsonParser.cpp" />
     <ClCompile Include="DjondbConnection.cpp" />
     <ClCompile Include="DjondbConnectionManager.cpp" />
     <ClCompile Include="DjondbCursor.cpp" />
@@ -162,7 +233,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

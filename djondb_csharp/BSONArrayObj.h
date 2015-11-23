@@ -44,15 +44,18 @@ namespace Djondb {
 
 			{
 				_index = -1;
+				_instance = arr;
 			}
 
 			BSONArrayEnumerator( BSONArrayEnumerator^ en )
 			{
+				_index = en->_index;
+				_instance = en->_instance;
 			}
 
 			virtual bool MoveNext() = System::Collections::Generic::IEnumerator<T>::MoveNext
 			{
-				if( _index < _instance->length() )
+				if( (_index + 1) < _instance->length() )
 				{
 					_index++;
 					return true;

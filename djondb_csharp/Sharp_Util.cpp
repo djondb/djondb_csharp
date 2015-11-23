@@ -2,6 +2,7 @@
 #include "Sharp_Util.h"
 #include <vcclr.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 Sharp_Util::Sharp_Util(void)
 {

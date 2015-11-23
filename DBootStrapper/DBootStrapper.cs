@@ -79,6 +79,51 @@ namespace Djondb
 
                 return Assembly.LoadFile(libraryPath);
             }
+            else if (args.Name.StartsWith("msvcp100"))
+            {
+                String appDir = GetAppDir();
+
+                // Here we detect the type of CPU architecture 
+                // at runtime and select the mixed-mode library 
+                // from the corresponding directory.
+                // This approach assumes that we only have two 
+                // versions of the mixed mode assembly, 
+                // X86 and X64, it will not work however on 
+                // ARM-based applications or any other non X86/X64 
+                // platforms
+                String relativeDir =
+                   String.Format("{0}\\msvcp100.dll",
+                         (IntPtr.Size == 8) ? _x64Dir : _x86Dir);
+                String libraryPath = Path.Combine(appDir, relativeDir);
+
+                // we do not need this resolver anymore
+                AppDomain.CurrentDomain.AssemblyResolve -= ResolverHandler;
+
+                return Assembly.LoadFile(libraryPath);
+
+            } 
+            else if (args.Name.StartsWith("msvcr100"))
+            {
+                String appDir = GetAppDir();
+
+                // Here we detect the type of CPU architecture 
+                // at runtime and select the mixed-mode library 
+                // from the corresponding directory.
+                // This approach assumes that we only have two 
+                // versions of the mixed mode assembly, 
+                // X86 and X64, it will not work however on 
+                // ARM-based applications or any other non X86/X64 
+                // platforms
+                String relativeDir =
+                   String.Format("{0}\\msvcr100.dll",
+                         (IntPtr.Size == 8) ? _x64Dir : _x86Dir);
+                String libraryPath = Path.Combine(appDir, relativeDir);
+
+                // we do not need this resolver anymore
+                AppDomain.CurrentDomain.AssemblyResolve -= ResolverHandler;
+
+                return Assembly.LoadFile(libraryPath);
+            }
             return null;
         }
 

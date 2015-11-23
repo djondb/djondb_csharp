@@ -54,6 +54,7 @@ namespace Djondb {
 
 	private:
 		djondb::DjondbCursor* _internal;
+		Djondb::BSONObj^ _current;
 	};
 
 };

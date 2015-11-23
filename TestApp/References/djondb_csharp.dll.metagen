@@ -1,0 +1,137 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly djondb_csharp, Version=0.3.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Djondb.BSONArrayObj`1[T]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: T
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(BSONArrayObj*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Generic.IEnumerable`1[T]
+    System.Collections.IEnumerable
+    System.IDisposable
+  Methods:
+    length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add(BSONObj): PrivateScope, Public, HideBySig
+    addAll(BSONArrayObj`1): PrivateScope, Public, HideBySig
+    get(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    toChar(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    select(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ptr(): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetEnumerator2(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Djondb.BSONArrayObj`1+BSONArrayEnumerator[T]: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  Type parameter: T
+    Void .ctor(Djondb.BSONArrayObj`1[T]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(BSONArrayEnumerator): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Generic.IEnumerator`1[T]
+    System.IDisposable
+    System.Collections.IEnumerator
+  Fields:
+    Djondb.BSONArrayObj`1[T] _instance : Public
+    Int32 _index : Public
+  Properties:
+    System.Object Current2 'get ' : 
+    T Current  'get ' : 
+  Methods:
+    get_Current(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Current2(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    MoveNext(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Reset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Djondb.BSONObj: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(BSONObj*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    add(String, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    add(String, BSONArrayObj`1): PrivateScope, Public, HideBySig
+    add(String, BSONObj): PrivateScope, Public, HideBySig
+    add(String, String): PrivateScope, Public, HideBySig
+    add(String, Int64): PrivateScope, Public, HideBySig
+    add(String, Double): PrivateScope, Public, HideBySig
+    add(String, Int32): PrivateScope, Public, HideBySig
+    has(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getBoolean(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getInt(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getDouble(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getLong(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getString(String): PrivateScope, Public, HideBySig
+    getBSON(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getBSONArray(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    select(String, Boolean(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    select(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    toChar(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    op_Equality(BSONObj): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    op_Inequality(BSONObj): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    ptr(): PrivateScope, Public, HideBySig
+    properties(): PrivateScope, Public, HideBySig
+    get(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Djondb.BSONParser: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    parse(String): PrivateScope, Public, Static, HideBySig
+    parseArray(String): PrivateScope, Public, Static, HideBySig
+Class Djondb.DjondbCursor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(djondb.DjondbCursor*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    next(): PrivateScope, Public, HideBySig
+    previous(): PrivateScope, Public, HideBySig
+    current(): PrivateScope, Public, HideBySig
+    length(): PrivateScope, Public, HideBySig
+    releaseCursor(): PrivateScope, Public, HideBySig
+    seek(Int32): PrivateScope, Public, HideBySig
+    ptr(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Djondb.DjondbConnection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(djondb.DjondbConnection*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    beginTransaction(): PrivateScope, Public, HideBySig
+    commitTransaction(): PrivateScope, Public, HideBySig
+    rollbackTransaction(): PrivateScope, Public, HideBySig
+    open(): PrivateScope, Public, HideBySig
+    close(): PrivateScope, Public, HideBySig
+    isOpen(): PrivateScope, Public, HideBySig
+    insert(String, String, BSONObj): PrivateScope, Public, HideBySig
+    insert(String, String, String): PrivateScope, Public, HideBySig
+    find(String, String, String, String, BSONObj): PrivateScope, Public, HideBySig
+    find(String, String, String, String): PrivateScope, Public, HideBySig
+    find(String, String, String, BSONObj): PrivateScope, Public, HideBySig
+    find(String, String, String): PrivateScope, Public, HideBySig
+    find(String, String, BSONObj): PrivateScope, Public, HideBySig
+    find(String, String): PrivateScope, Public, HideBySig
+    update(String, String, BSONObj): PrivateScope, Public, HideBySig
+    update(String, String, String): PrivateScope, Public, HideBySig
+    remove(String, String, String, String): PrivateScope, Public, HideBySig
+    executeQuery(String): PrivateScope, Public, HideBySig
+    executeUpdate(String): PrivateScope, Public, HideBySig
+    releaseCursor(DjondbCursor): PrivateScope, Public, HideBySig
+    dropNamespace(String, String): PrivateScope, Public, HideBySig
+    dbs(): PrivateScope, Public, HideBySig
+    namespaces(String): PrivateScope, Public, HideBySig
+    host(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class Djondb.DjondbConnectionManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getConnection(String): PrivateScope, Public, Static, HideBySig

@@ -24,7 +24,7 @@
 #ifndef DJONDBCURSOR_INCLUDED_H
 #define DJONDBCURSOR_INCLUDED_H 
 
-//#include "util.h"
+#include "util.h"
 
 #ifdef WINDOWS
    #define LibraryExport   __declspec( dllexport )
@@ -62,7 +62,7 @@ namespace djondb {
 		 * @param nos
 		 * @param nis
 		 * @param writer
-		 * @param cursorId contains the id of the cursor
+		 * @param cursorId contains the id of the cursor, if the cursorId is null the firstPage will contain all the records required
 		 * @param firstPage contains the first page of the cursor, the cursor will gain control of this variable, it should not freed from the caller
 		 */
 			DjondbCursor(NetworkOutputStream* nos, NetworkInputStream* nis, CommandWriter* writer, const char* cursorId, BSONArrayObj* firstPage);

@@ -42,7 +42,7 @@ class Logger {
 		struct timespec _ts1;
 		struct timespec _ts2;
 		bool _timerRunning;
-		static std::map<std::string, Logger* const> _loggers;
+		static std::map<std::string, Logger*> _loggers;
 
 	private:
 		Logger();
