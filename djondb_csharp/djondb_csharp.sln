@@ -89,6 +89,7 @@ Global
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|Mixed Platforms.ActiveCfg = RelWithDebInfo|Any CPU
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|Mixed Platforms.Build.0 = RelWithDebInfo|Any CPU
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|Any CPU
+		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|Any CPU
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x86.ActiveCfg = RelWithDebInfo|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

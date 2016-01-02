@@ -63,7 +63,7 @@ namespace TestApp
                 {
                     Console.WriteLine("Connected");
 
-                    DjondbCursor c1 =  con.find("ItsmDb", "COMPANYPRODUCT");
+                    DjondbCursor c1 =  con.executeQuery("select _id from ItsmDb:COMPANYPRODUCT");
 
                     BSONArrayObj<BSONObj> arr = new BSONArrayObj<BSONObj>();
                     while (c1.next())

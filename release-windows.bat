@@ -11,11 +11,13 @@ cd %PATH_SRC_STARTUP%
 
 @rem pause
 
+call update.bat
+
 echo Creating project files for %GEN_NAME%
 
-%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=Release /p:Platform=x64
-%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=Release /p:Platform=Win32
-%PATH_MSBUILD%\msbuild DBootStrapper\DBootStrapper.csproj /p:Configuration=Release /p:Platform=AnyCPU
+%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=RelWithDebInfo /p:Platform=x64
+%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=RelWithDebInfo /p:Platform=Win32
+%PATH_MSBUILD%\msbuild DBootStrapper\DBootStrapper.csproj /p:Configuration=RelWithDebInfo /p:Platform=AnyCPU
 
 mkdir build
 cd build

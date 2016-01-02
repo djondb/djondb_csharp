@@ -59,6 +59,10 @@ std::string getTempDir();
 Version getCurrentVersion();
 Version getVersion(const char* version);
 
+typedef int (*ShutdownCallback)(void);
+int shutdownGracefully();
+void registerShutdownCallback(ShutdownCallback callback);
+
 #ifndef LINUX
 int clock_gettime(int X, struct timespec *tv);
 #define CLOCK_REALTIME 0
