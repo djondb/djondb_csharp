@@ -12,7 +12,7 @@ using namespace System::Security::Permissions;
 // associated with an assembly.
 //
 [assembly:AssemblyTitleAttribute("djondb_csharp")];
-[assembly:AssemblyDescriptionAttribute("Djondb 0.3.3 CSharp Driver")];
+[assembly:AssemblyDescriptionAttribute("Djondb 3.5.60518 CSharp Driver")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("Djondb")];
 [assembly:AssemblyProductAttribute("djondb_csharp")];
@@ -31,7 +31,7 @@ using namespace System::Security::Permissions;
 // You can specify all the value or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly:AssemblyVersionAttribute("0.3.3.*")];
+[assembly:AssemblyVersionAttribute("3.6.*")];
 
 [assembly:ComVisible(false)];
 

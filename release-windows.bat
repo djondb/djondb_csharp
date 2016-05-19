@@ -26,6 +26,7 @@ cmake ..
 cpack
 rem pause
 
+move djondb_csharp-*.exe djondb_csharp.exe
 cd ..
 REM Everything done, now it's time to create the output
 REM

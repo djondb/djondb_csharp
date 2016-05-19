@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "..\TestApp\TestA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBootStrapper", "..\DBootStrapper\DBootStrapper.csproj", "{E7640B46-60A0-4DB3-A83F-61729B471254}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testx64", "..\Testx64\Testx64.csproj", "{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,25 @@ Global
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|Any CPU
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|Any CPU
 		{E7640B46-60A0-4DB3-A83F-61729B471254}.RelWithDebInfo|x86.ActiveCfg = RelWithDebInfo|Any CPU
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|x64.ActiveCfg = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|x64.Build.0 = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Debug|x86.ActiveCfg = Debug|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|Any CPU.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|Mixed Platforms.Build.0 = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|x64.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|x64.Build.0 = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.Release|x86.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|Any CPU.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|Any CPU.Build.0 = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|Mixed Platforms.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|Mixed Platforms.Build.0 = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{41CA3466-5DA3-4644-8E3F-03D2253C2B0A}.RelWithDebInfo|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

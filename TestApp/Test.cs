@@ -24,6 +24,7 @@ namespace TestApp
 
                 if (con.open())
                 {
+                    con.insert("test", "ns", o);
                     try
                     {
                         con.update("test", "ns", "{'_id': '1234', '_revision': '1234' }");
@@ -33,7 +34,6 @@ namespace TestApp
                         // Expected exception
                     }
 
-                    con.insert("test", "ns", o);
                 }
             }
             catch (Exception e)
@@ -85,6 +85,11 @@ namespace TestApp
                         }
                         Console.WriteLine(o.toChar());
                     }
+
+                    DjondbCursor c2 = con.executeQuery("select _id from ItsmDb:COMPANYPRODUCTXS");
+
+                    BSONArrayObj<BSONObj> arr2 = new BSONArrayObj<BSONObj>();
+                    BSONObj temp = c2.current();
 
                 }
             }
