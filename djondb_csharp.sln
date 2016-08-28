@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "djondb_csharp", "djondb_csharp\djondb_csharp.csproj", "{8F28C18E-5827-4CDC-B8F9-EFC571195C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{60594148-6C78-498B-8A1F-FA406383A93E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F28C18E-5827-4CDC-B8F9-EFC571195C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F28C18E-5827-4CDC-B8F9-EFC571195C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F28C18E-5827-4CDC-B8F9-EFC571195C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F28C18E-5827-4CDC-B8F9-EFC571195C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60594148-6C78-498B-8A1F-FA406383A93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60594148-6C78-498B-8A1F-FA406383A93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60594148-6C78-498B-8A1F-FA406383A93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60594148-6C78-498B-8A1F-FA406383A93E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
