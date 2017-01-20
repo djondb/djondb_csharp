@@ -9,6 +9,10 @@ namespace Djondb
     {
         private int ResultCode;
         private string ResultMessage;
+        public override string Message
+        {
+            get { return ToString(); }
+        }
 
         public DjondbException(int ResultCode, string ResultMessage)
         {

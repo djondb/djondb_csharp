@@ -167,9 +167,28 @@ namespace Djondb
 
         internal void Flush()
         {
-            byte[] data = _stream.ToArray();
-            _client.GetStream().Write(data, 0, data.Length);
-            Reset();
+            try
+            {
+                byte[] data = _stream.ToArray();
+                _client.GetStream().Write(data, 0, data.Length);
+                Reset();
+            }
+            catch (IOException e)
+            {
+                throw HandleException(e);
+            }
+        }
+
+        private DjondbException HandleException(IOException e)
+        {
+            if (this._client.Connected)
+            {
+                return new DjondbException(600, "Error connecting to the server.");
+            }
+            else
+            {
+                return new DjondbException(600, "Disconnected from server");
+            }
         }
 
         public void Reset()
@@ -279,7 +298,15 @@ namespace Djondb
             if ((BufferLen - BufferPos) < p)
             {
                 byte[] buffer = new byte[1024*100];
-                int readed = _client.GetStream().Read(buffer, 0, 1024*100);
+                int readed;
+                try
+                {
+                    readed = _client.GetStream().Read(buffer, 0, 1024 * 100);
+                }
+                catch (IOException e)
+                {
+                    throw HandleException(e);
+                }
                 long pos = _stream.Position;
                 _stream.Seek(0, SeekOrigin.End);
                 _stream.Write(buffer, 0, readed);
