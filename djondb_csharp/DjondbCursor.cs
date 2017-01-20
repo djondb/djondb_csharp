@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Djondb
 {
-    public class DjondbCursor
+    public class DjondbCursor: IEnumerator<BSONObj>
     {
         private enum CursorStatus
         {
@@ -52,7 +52,13 @@ namespace Djondb
             }
         }
 
+        [Obsolete]
         public bool Next()
+        {
+            return InternalNext();
+        }
+
+        private bool InternalNext()
         {
             if (_status == CursorStatus.CS_CLOSED)
             {
@@ -78,7 +84,7 @@ namespace Djondb
                     {
                         _rows.Add(page);
                         _count += page.Count;
-                        result = Next();
+                        result = InternalNext();
                     }
                 }
                 else
@@ -97,9 +103,30 @@ namespace Djondb
             }
         }
 
+        object System.Collections.IEnumerator.Current
+        {
+            get { return Current; }
+        }
+
         public void ReleaseCursor()
         {
             _command.ReleaseCursor(this._cursorId);
+        }
+
+        public void Dispose()
+        {
+            ReleaseCursor();
+        }
+
+        public bool MoveNext()
+        {
+            return InternalNext();
+        }
+
+        public void Reset()
+        {
+            this._pos = 0;
+            InternalNext();
         }
     }
 }
