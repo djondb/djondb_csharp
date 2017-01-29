@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 @rem if [%1] ==[] goto usage
 
-call setenv.bat
+@rem call setenv.bat
 call:parseArguments %*
 
 echo Creating output dir
@@ -11,25 +11,13 @@ cd %PATH_SRC_STARTUP%
 
 @rem pause
 
-call update.bat
-
 echo Creating project files for %GEN_NAME%
 
-%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=RelWithDebInfo /p:Platform=x64
-%PATH_MSBUILD%\msbuild djondb_csharp\djondb_csharp.vcxproj /p:Configuration=RelWithDebInfo /p:Platform=Win32
-%PATH_MSBUILD%\msbuild DBootStrapper\DBootStrapper.csproj /p:Configuration=RelWithDebInfo /p:Platform=AnyCPU
+echo %PATH_MSBUILD%
+msbuild djondb_csharp.sln /p:Configuration=Release /p:Platform="Any CPU"
+@rem %PATH_MSBUILD%\msbuild djondb_csharp.sln Rebuild /p:Configuration=Release /p:Platform="Any CPU"
 
-mkdir build
-cd build
-cmake .. 
-
-cpack
-rem pause
-
-move djondb_csharp-*.exe djondb_csharp.exe
-cd ..
-REM Everything done, now it's time to create the output
-REM
+move Setup\Setup\Express\SingleImage\DiskImages\DISK1\setup.exe Releases\Current\djondb_csharp.exe
 
 GOTO END
 
